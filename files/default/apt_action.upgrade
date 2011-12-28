@@ -1,0 +1,2 @@
+autoclean -y
+dist-upgrade -y --assume-yes --force-yes -o APT::Get::Show-Upgraded=true

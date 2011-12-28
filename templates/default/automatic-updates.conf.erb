@@ -1,0 +1,8 @@
+start on <%= @start_event %> 
+
+script
+    apt-get update | tee /tmp/apt.log
+    apt-get autoclean -y | tee -a /tmp/apt.log
+    apt-get dist-upgrade -y --assume-yes --force-yes | tee -a /tmp/apt.log
+end script
+
