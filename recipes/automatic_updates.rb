@@ -48,9 +48,9 @@ else
 end
 
 
-if node["automatic_updates"]["on_monday"] != "No" or node["automatic_updates"]["on_tuesday"] != "No" or
-node["automatic_updates"]["on_wednesday"] != "No" or node["automatic_updates"]["on_thursday"] != "No" or
-node["automatic_updates"]["on_friday"] != "No"
+if node["automatic_updates"]["on_monday"] == "on" or node["automatic_updates"]["on_tuesday"] == "on" or
+node["automatic_updates"]["on_wednesday"] == "on" or node["automatic_updates"]["on_thursday"] == "on" or
+node["automatic_updates"]["on_friday"] == "on"
   package 'cron-apt' do
     action :nothing
   end.run_action(:install)
@@ -79,28 +79,28 @@ node["automatic_updates"]["on_friday"] != "No"
   end
   
   cron_values = ""
-  if node["automatic_updates"]["on_monday"] != "No"
-    hour, min = node["automatic_updates"]["on_monday"].split(":")
+  if node["automatic_updates"]["on_monday"] == "on"
+    hour, min = node["automatic_updates"]["on_monday_time"].split(":")
     cron_values = cron_values + "\n" + "#{min} #{hour}  * * 1   root    test -x /usr/sbin/cron-apt && /usr/sbin/cron-apt /etc/cron-apt/config"
   end
 
-  if node["automatic_updates"]["on_tuesday"] != "No"
-    hour, min = node["automatic_updates"]["on_tuesday"].split(":")
+  if node["automatic_updates"]["on_tuesday"] == "on"
+    hour, min = node["automatic_updates"]["on_tuesday_time"].split(":")
     cron_values = cron_values + "\n" + "#{min} #{hour}  * * 2   root    test -x /usr/sbin/cron-apt && /usr/sbin/cron-apt /etc/cron-apt/config"
   end
 
-  if node["automatic_updates"]["on_wednesday"] != "No"
-    hour, min = node["automatic_updates"]["on_wednesday"].split(":")
+  if node["automatic_updates"]["on_wednesday"] != "on"
+    hour, min = node["automatic_updates"]["on_wednesday_time"].split(":")
     cron_values = cron_values + "\n" + "#{min} #{hour}  * * 3   root    test -x /usr/sbin/cron-apt && /usr/sbin/cron-apt /etc/cron-apt/config"
   end
 
-  if node["automatic_updates"]["on_thursday"] != "No"
-    hour, min = node["automatic_updates"]["on_thursday"].split(":")
+  if node["automatic_updates"]["on_thursday"] != "on"
+    hour, min = node["automatic_updates"]["on_thursday_time"].split(":")
     cron_values = cron_values + "\n" + "#{min} #{hour}  * * 4   root    test -x /usr/sbin/cron-apt && /usr/sbin/cron-apt /etc/cron-apt/config"
   end
 
-  if node["automatic_updates"]["on_friday"] != "No"
-    hour, min = node["automatic_updates"]["on_friday"].split(":")
+  if node["automatic_updates"]["on_friday"] != "on"
+    hour, min = node["automatic_updates"]["on_friday_time"].split(":")
     cron_values = cron_values + "\n" + "#{min} #{hour}  * * 5   root    test -x /usr/sbin/cron-apt && /usr/sbin/cron-apt /etc/cron-apt/config"
   end
   cron_apt = "/etc/cron.d/cron-apt"
