@@ -18,6 +18,7 @@ attribute 'automatic_updates/on_boot',
   :choice       => [ "true", "false" ],
   :required     => "required",
   :default      => "false",
+  :order        => "0",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_login',
@@ -27,6 +28,7 @@ attribute 'automatic_updates/on_login',
   :choice       => [ "true", "false" ],
   :required     => "required",
   :default      => "false",
+  :order        => "1",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 
@@ -37,6 +39,7 @@ attribute 'automatic_updates/on_monday',
   :choice       => ["on","off"],
   :required     => "required",
   :default      => "off",
+  :order        => "2",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_monday_time',
@@ -47,6 +50,7 @@ attribute 'automatic_updates/on_monday_time',
   :custom       => "^((\d\d:\d\d))$",
   :required     => "required",
   :default      => "00:00",
+  :order        => "3",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_tuesday',
@@ -56,6 +60,7 @@ attribute 'automatic_updates/on_tuesday',
   :choice       => ["on","off"],
   :required     => "required",
   :default      => "off",
+  :order        => "4",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_tuesday_time',
@@ -66,6 +71,7 @@ attribute 'automatic_updates/on_tuesday_time',
   :custom       => "^((\d\d:\d\d))$",
   :required     => "required",
   :default      => "00:00",
+  :order        => "5",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_wednesday',
@@ -75,6 +81,7 @@ attribute 'automatic_updates/on_wednesday',
   :choice       => ["on","off"],
   :required     => "required",
   :default      => "off",
+  :order        => "6",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_wednesday_time',
@@ -85,6 +92,7 @@ attribute 'automatic_updates/on_wednesday_time',
   :custom       => "^((\d\d:\d\d))$",
   :required     => "required",
   :default      => "00:00",
+  :order        => "7",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_thursday',
@@ -94,6 +102,7 @@ attribute 'automatic_updates/on_thursday',
   :choice       => ["on","off"],
   :required     => "required",
   :default      => "off",
+  :order        => "8",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_thursday_time',
@@ -104,6 +113,7 @@ attribute 'automatic_updates/on_thursday_time',
   :custom       => "^((\d\d:\d\d))$",
   :required     => "required",
   :default      => "00:00",
+  :order        => "9",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_friday',
@@ -113,6 +123,7 @@ attribute 'automatic_updates/on_friday',
   :choice       => ["on","off"],
   :required     => "required",
   :default      => "off",
+  :order        => "10",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_friday_time',
@@ -123,6 +134,7 @@ attribute 'automatic_updates/on_friday_time',
   :custom       => "^((\d\d:\d\d))$",
   :required     => "required",
   :default      => "00:00",
+  :order        => "11",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_saturday',
@@ -132,6 +144,7 @@ attribute 'automatic_updates/on_saturday',
   :choice       => ["on","off"],
   :required     => "required",
   :default      => "off",
+  :order        => "12",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_saturday_time',
@@ -142,6 +155,7 @@ attribute 'automatic_updates/on_saturday_time',
   :custom       => "^((\d\d:\d\d))$",
   :required     => "required",
   :default      => "00:00",
+  :order        => "13",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_sunday',
@@ -151,6 +165,7 @@ attribute 'automatic_updates/on_sunday',
   :choice       => ["on","off"],
   :required     => "required",
   :default      => "off",
+  :order        => "14",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 attribute 'automatic_updates/on_sunday_time',
@@ -161,6 +176,7 @@ attribute 'automatic_updates/on_sunday_time',
   :custom       => "^((\d\d:\d\d))$",
   :required     => "required",
   :default      => "00:00",
+  :order        => "15",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
 
@@ -172,5 +188,6 @@ attribute 'automatic_updates/max_random_time_span',
   :custom       => "^(\d\d\d)$",
   :required     => "required",
   :default      => "000",
+  :order        => "16",
   :recipes      => [ 'automatic_updates::automatic_updates' ]
 
